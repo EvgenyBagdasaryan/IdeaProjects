@@ -18,13 +18,16 @@ public class BirdsController {
     private final StrausInfo strausInfo;
     private Parrot charlyParrot;
 
+    private Parrot charlyParrotOneElse;
+
     public BirdsController(
-            //@Qualifier("iAmParrotSecond") Parrot charlyParrot
-            Parrot charlyParrot,
+            @Qualifier("iAmParrotSecond") Parrot charlyParrot,
+            Parrot charlyParrotOneElse,
             BirdInfo birdInfo,
             StrausInfo strausInfo
     ) {
         this.charlyParrot = charlyParrot;
+        this.charlyParrotOneElse = charlyParrotOneElse;
         this.birdInfo = birdInfo;
         this.strausInfo = strausInfo;
         System.out.println("charlyParrot:" + charlyParrot.uuuu);
@@ -42,6 +45,10 @@ public class BirdsController {
     @GetMapping("/allbird")
     BirdInfo getAllBird(){
         return birdInfo;
+    }
+    @GetMapping("/OneParrotElse")
+    int getOneParrotElse(){
+        return charlyParrot.uuuu;
     }
     @GetMapping("/straus")
     StrausInfo getAllStraus(){

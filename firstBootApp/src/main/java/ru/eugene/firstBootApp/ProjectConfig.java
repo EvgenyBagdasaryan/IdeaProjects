@@ -8,14 +8,14 @@ import org.springframework.context.annotation.Configuration;
 public class ProjectConfig {
 
     @Bean
-    public Parrot iAmParrot(){
+    public Parrot iAmParrotBum(){
         return new Parrot(87);
     }
 
-    /*@Bean
+    @Bean
     public Parrot iAmParrotSecond(){
         return new Parrot(98);
-    }*/
+    }
 
     @Bean
     @ConfigurationProperties(prefix="straus")

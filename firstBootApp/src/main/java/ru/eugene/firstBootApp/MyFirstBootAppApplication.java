@@ -12,5 +12,4 @@ public class MyFirstBootAppApplication {
 
 		SpringApplication.run(MyFirstBootAppApplication.class, args);
 	}
-
 }
