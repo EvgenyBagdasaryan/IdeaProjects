@@ -1,4 +1,6 @@
-package org.example;
+package org.example.threads;
+
+import org.example.SharedResource;
 
 public class MyThreadFirst extends Thread{
     private SharedResource sharedResource;

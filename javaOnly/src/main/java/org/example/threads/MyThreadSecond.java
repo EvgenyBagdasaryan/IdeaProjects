@@ -1,4 +1,6 @@
-package org.example;
+package org.example.threads;
+
+import org.example.Calculator;
 
 public class MyThreadSecond extends Thread {
     private Calculator calculator;

@@ -9,5 +9,4 @@ class MyFirstBootAppApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

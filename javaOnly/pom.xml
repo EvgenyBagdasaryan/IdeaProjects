@@ -20,6 +20,11 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>there.simple</groupId> <!-- Замените на groupId вашей библиотеки -->
+            <artifactId>ebagdasaryan</artifactId> <!-- Замените на artifactId вашей библиотеки -->
+            <version>v1</version> <!-- Замените на версию вашей библиотеки -->
+        </dependency>
     </dependencies>
 
 </project>

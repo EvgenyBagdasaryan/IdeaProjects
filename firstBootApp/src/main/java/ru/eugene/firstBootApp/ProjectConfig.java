@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProjectConfig {
 
-    @Bean
+    /*@Bean
     public Parrot iAmParrotBum(){
         return new Parrot(87);
-    }
+    }*/
 
     @Bean
     public Parrot iAmParrotSecond(){
@@ -21,5 +21,10 @@ public class ProjectConfig {
     @ConfigurationProperties(prefix="straus")
     public StrausInfo getStraus(){
         return new StrausInfo();
+    }
+
+    @Bean
+    public MyService myService(){
+        return new MyServiceImpl();
     }
 }

@@ -1,14 +1,18 @@
 package ru.eugene.firstBootApp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/birds")
 public class BirdsController {
+
+    @Autowired
+    private KafkaProducerService kafkaProducerService;
 
     @Value("${parrot-name:Zorro}")
     private String nameParrot;
@@ -34,6 +38,11 @@ public class BirdsController {
         System.out.println("nameParrot:" + nameParrot);
     }
 
+    @PostMapping("/kafka/message")
+    ResponseEntity<String> sendMessageToKafka(@RequestBody String message) {
+        kafkaProducerService.sendMessage("newTopic", message);
+        return new ResponseEntity<>("Message sent to Kafka", HttpStatus.OK);
+    }
     @GetMapping("/parrot")
     String getBird(){
         return nameParrot;

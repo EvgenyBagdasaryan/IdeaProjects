@@ -1,7 +1,5 @@
 package ru.eugene.firstBootApp;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
 class StrausInfo {
     private String strausName;
 
