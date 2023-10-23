@@ -4,6 +4,8 @@ import org.example.adapter.AudioPlayer;
 import org.example.adapter.MediaPlayer;
 import org.example.async.AnotherClass;
 import org.example.async.MyClass;
+import org.example.events.HelloJava2;
+import org.example.functionalInterface.FunctionalInterfaces;
 import org.example.functionalInterface.MyFunctionalInterface;
 import org.example.personInvocation.PersonInvocationHandler;
 import org.example.polymorphism.FirmManufacturing;
@@ -21,9 +23,8 @@ import static org.example.Test.setStatic;
 public class Main {
     public static void main(String[] args) {
 
-        Person sameMan = new Man("Gogi", 34, "Delaver", "USA");
-
-        sameMan.introduce("Urasik");
+        //Person sameMan = new Man("Gogi", 34, "Delaver", "USA");
+        //sameMan.introduce("Urasik");
 
         //firstCase();
         //secondCase();
@@ -34,7 +35,10 @@ public class Main {
         //funInterfaceTest();
         //(new FirmManufacturing()).createAllSweets();
         //asyncCaseCallback();
-        personInvocation();
+        //personInvocation();
+        //functionalInterface();
+        eventsTest();
+
 
         //String
         //Boolean
@@ -185,5 +189,14 @@ public class Main {
         //Вызываем у прокси объекта один из методов нашего оригинального объекта
         //proxyVasia.sayFrom(vasia.getName(), vasia.getName());
 
+    }
+
+    public static void functionalInterface(){
+        FunctionalInterfaces fi = new FunctionalInterfaces();
+        fi.FI();
+    }
+
+    public static void eventsTest(){
+        new HelloJava2();
     }
 }
